@@ -15,19 +15,25 @@ public class EjercicioUno {
 
         System.out.print("Ingrese horas de trabajo: ");
         horasTrabajo = sc.nextInt();
-            
-        totaHorasExtra = horasTrabajo - 40;
-            
-        totalDinero = (40 * 40);// dinero base
+        
+        if (horasTrabajo > 40) {
 
-        if (totaHorasExtra <= 8) {
-            totalDinero = totalDinero + ((totaHorasExtra * 2) * 40);
-        }
+            totaHorasExtra = horasTrabajo - 40;
+            
+            totalDinero = (40 * 40);// dinero base
 
-        if (totaHorasExtra > 8) {
-            horasExtraTriple = totaHorasExtra - 8;
-            horasExtraDoble = totaHorasExtra - horasExtraTriple;
-            totalDinero = totalDinero + ((horasExtraDoble * 2) * 40) + ((horasExtraTriple * 3) * 40);
+            if (totaHorasExtra <= 8) {
+                totalDinero = totalDinero + ((totaHorasExtra * 2) * 40);
+            }
+
+            if (totaHorasExtra > 8) {
+                horasExtraTriple = totaHorasExtra - 8;
+                horasExtraDoble = totaHorasExtra - horasExtraTriple;
+                totalDinero = totalDinero + ((horasExtraDoble * 2) * 40) + ((horasExtraTriple * 3) * 40);
+            } 
+
+        } else {
+            totalDinero = (horasTrabajo * 40);
         }
 
         System.out.println("Total dinero: " + totalDinero);
